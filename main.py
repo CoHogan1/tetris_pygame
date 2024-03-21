@@ -2,6 +2,7 @@ import pygame, sys
 from pygame import mixer
 from pygame.locals import*
 import random
+from blocks import *
 
 from grid import Grid
 
@@ -18,14 +19,12 @@ dark_blue = (44, 44, 127)
 
 print('running file')
 
-
-
 game_grid = Grid()
 #game_grid.print_grid()
 
-game_grid.grid[0][0] = 1  3 32:13
-game_grid.grid[3][5] = 4
-game_grid.grid[17][8] = 7
+block = LBlock()
+
+
 
 run = True
 while run:
@@ -36,8 +35,10 @@ while run:
         if event.type == pygame.QUIT or key[pygame.K_ESCAPE]:
             run = False
 
+    # drawing
     screen.fill(dark_blue)
     game_grid.draw(screen)
+    block.draw(screen)
 
 
 
